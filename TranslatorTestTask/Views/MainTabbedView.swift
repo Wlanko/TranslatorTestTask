@@ -15,13 +15,13 @@ struct MainTabbedView: View {
             TabView(selection: $selectedTab){
                 TranslatorView()
                     .tag(0)
-                ClickerView()
+                SettingsView()
                     .tag(1)
             }
             
             ZStack {
                 HStack {
-                    ForEach((TabbedItems.allCases), id: \.self) {item in
+                    ForEach(TabbedItems.allCases, id: \.self) {item in
                         Button {
                             selectedTab = item.rawValue
                         } label : {
