@@ -29,9 +29,10 @@ struct MainTabbedView: View {
                         }
                     }
                 }
-                .frame( height: 82)
+                .frame( height: scale(82))
                 .background(.white)
                 .cornerRadius(16)
+                .padding(.bottom, scale(16))
             }
         }
     }
