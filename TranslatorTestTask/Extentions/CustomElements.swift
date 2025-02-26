@@ -11,14 +11,15 @@ import SwiftUI
 extension View {
     public func Title(_ text: String) -> some View {
         Text(text)
+            .tint(Color(hex: "#292D32"))
             .font(Font.custom("Konkhmer Sleokchher", size: scale(32)))
             .padding(.bottom, scale(12))
     }
     
-    public func customText(_ text: String, size: CGFloat = 16) -> some View {
+    public func CustomText(_ text: String, size: CGFloat = 16) -> some View {
         Text(text)
+            .tint(Color(hex: "#292D32"))
             .font(Font.custom("Konkhmer Sleokchher", size: size))
-            .foregroundColor(Color.gray)
     }
 }
 

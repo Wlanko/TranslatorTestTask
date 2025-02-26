@@ -12,6 +12,9 @@ struct TranslatorView: View {
     @State private var translateFrom: String = "HUMAN"
     @State private var translateTo: String = "PET"
     @State private var selectedAnimal: Animals = .cat
+    @State private var showUnauthoriedAlert: Bool = false
+    
+    private let viewModel: TranslatorViewModel = TranslatorViewModel()
     
     var body: some View {
         ZStack{
@@ -21,8 +24,7 @@ struct TranslatorView: View {
                 Title("Translator")
                 
                 HStack {
-                    Text(translateFrom)
-                        .font(Font.custom("Konkhmer Sleokchher", size: 16))
+                    CustomText(translateFrom, size: scale(16))
                         .frame(width: scale(135), height: scale(61))
                     
                     
@@ -34,8 +36,7 @@ struct TranslatorView: View {
                         Image("arrow-swap-horizontal")
                     }
                     
-                    Text(translateTo)
-                        .font(Font.custom("Konkhmer Sleokchher", size: 16))
+                    CustomText(translateTo, size: scale(16))
                         .frame(width: scale(135), height: scale(61))
                     
                 }
@@ -43,7 +44,7 @@ struct TranslatorView: View {
                 
                 HStack{
                     Button {
-                        
+                        viewModel.startRecording(showUnauthorizedAlert: $showUnauthoriedAlert)
                     } label: {
                         ZStack {
                             VStack{
@@ -53,8 +54,7 @@ struct TranslatorView: View {
                                     .frame(width: scale(70), height: scale(70))
                                     .padding(.top, scale(44))
                                 
-                                Text("Start Speak")
-                                    .font(Font.custom("Konkhmer Sleokchher", size: 16))
+                                CustomText("Start Speak", size: scale(16))
                                     .padding(.top, scale(24))
                                     .padding(.bottom, scale(16))
                                     .tint(Color(hex: "#292D32"))
@@ -65,6 +65,19 @@ struct TranslatorView: View {
                     .background(.white)
                     .cornerRadius(16)
                     .shadow(color: Color.black.opacity(0.2), radius: 4)
+                    .alert(isPresented: $showUnauthoriedAlert) {
+                        Alert(
+                            title: Text("Enable Microphone Access"),
+                            message: Text("This app needs access to your microphone to work properly."),
+                            primaryButton: .cancel(Text("Cancel")),
+                            secondaryButton: .default(Text("Settings")) {
+                                if let url = URL(string: UIApplication.openSettingsURLString) {
+                                        UIApplication.shared.open(url)
+                                    }
+                            }
+                        )
+                        
+                    }
                     
                     VStack(alignment: .center, spacing: scale(12)) {
                         ForEach(Animals.allCases, id: \.self) { animal in
@@ -108,6 +121,9 @@ struct TranslatorView: View {
                 Spacer()
             }
             .padding()
+        }
+        .onAppear {
+            viewModel.getPermission()
         }
     }
 }
