@@ -3,19 +3,19 @@
 The app contains following functionality:
 
 *Translator screen:*
-![](https://github.com/user-attachments/assets/c437f736-c13a-40c8-b48d-55372ed2520b|width=100)
+![image](https://github.com/user-attachments/assets/c437f736-c13a-40c8-b48d-55372ed2520b|width=300)
 
 Selection from who to whom the translation will be happening
-![](https://github.com/user-attachments/assets/17a34006-3e7b-42a9-bbd1-57768902ba01|width=100)
+![image](https://github.com/user-attachments/assets/17a34006-3e7b-42a9-bbd1-57768902ba01|width=100)
 
 than you can select which animal to translate:
-!([](https://github.com/user-attachments/assets/2e1b7e7e-58a1-4850-bc3a-c355bf66b543|width=100)
+!([image](https://github.com/user-attachments/assets/2e1b7e7e-58a1-4850-bc3a-c355bf66b543|width=100)
 
 After that by pressing on "Start Speak" button if the app has permissinons it will start the recording:
-![](https://github.com/user-attachments/assets/0668eef1-4de6-4ea7-8e2e-30a39265b32e|width=100)
+![image](https://github.com/user-attachments/assets/0668eef1-4de6-4ea7-8e2e-30a39265b32e|width=100)
 
 After finishing the recording it will analize audio input and give you results depending on were you translatinf from human:
-![](https://github.com/user-attachments/assets/a4791927-3c55-4909-a255-a2097aa58fa9|width=100)
+![image](https://github.com/user-attachments/assets/a4791927-3c55-4909-a255-a2097aa58fa9|width=100)
 or from pet:
 ![image](https://github.com/user-attachments/assets/92287587-0116-4fb5-a03d-a1d38127c293|width=100)
 
