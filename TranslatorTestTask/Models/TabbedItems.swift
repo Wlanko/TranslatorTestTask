@@ -23,7 +23,7 @@ enum TabbedItems: Int, CaseIterable {
     var tabBarItemImage: String {
         switch self {
         case .translator:
-            return "bubble.left.and.bubble.right"
+            return "messages-2"
         case .clicker:
             return "gearshape"
         }
