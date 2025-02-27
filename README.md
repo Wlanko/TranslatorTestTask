@@ -15,7 +15,7 @@ After that by pressing on "Start Speak" button if the app has permissinons it wi
 ![](https://github.com/user-attachments/assets/0668eef1-4de6-4ea7-8e2e-30a39265b32e|width=100)
 
 After finishing the recording it will analize audio input and give you results depending on were you translatinf from human:
-![](https://github.com/user-attachments/assets/a4791927-3c55-4909-a255-a2097aa58fa9| width=100)
+![](https://github.com/user-attachments/assets/a4791927-3c55-4909-a255-a2097aa58fa9|width=100)
 or from pet:
 ![image](https://github.com/user-attachments/assets/92287587-0116-4fb5-a03d-a1d38127c293|width=100)
 
