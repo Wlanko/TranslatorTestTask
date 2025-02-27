@@ -32,8 +32,12 @@ class TranslatorViewModel {
     
     func isAuthorized(showUnauthorizedAlert: Binding<Bool>, _ permitRecording: Binding<Bool>) {
         Task.init {
-            if AVCaptureDevice.authorizationStatus(for: .audio) == .authorized {
+            let status = AVCaptureDevice.authorizationStatus(for: .audio)
+            
+            if status == .authorized {
                 permitRecording.wrappedValue = true
+            } else if status == .notDetermined {
+                await AVCaptureDevice.requestAccess(for: .audio)
             } else {
                 showUnauthorizedAlert.wrappedValue = true
             }
